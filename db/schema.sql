@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS lights_db;
+CREATE DATABASE lights_db;
