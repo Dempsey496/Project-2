@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS lights_db;
-CREATE DATABASE lights_db;
+DROP DATABASE IF EXISTS cyberSanta_db;
+CREATE DATABASE cyberSanta_db;
