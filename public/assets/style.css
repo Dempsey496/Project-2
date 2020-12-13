@@ -1,0 +1,7 @@
+.hero {
+    height: 800px;
+    width: 100%;
+    background-image: url("./santa.jpg");
+    background-size: cover;
+    background-position: center;
+}
