@@ -1,13 +1,11 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
 const handlebars = require("handlebars");
-const {
-  allowInsecurePrototypeAccess,
-} = require("@handlebars/allow-prototype-access");
+// const {
+//   allowInsecurePrototypeAccess,
+// } = require("@handlebars/allow-prototype-access");
 const db = require("./models");
 const app = express();
-
-const playerController = require("./controllers/lightsController");
 
 const PORT = process.env.PORT || 8080;
 
@@ -24,7 +22,7 @@ app.engine(
   "handlebars",
   exphbs({
     defaultLayout: "main",
-    handlebars: allowInsecurePrototypeAccess(handlebars),
+    // handlebars: allowInsecurePrototypeAccess(handlebars),
   })
 );
 app.set("view engine", "handlebars");
@@ -36,8 +34,6 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
-app.use(playerController);
-
 // API Routes
 app.get("/api/config", (req, res) => {
   res.json({
@@ -48,7 +44,9 @@ app.get("/api/config", (req, res) => {
 app.post("/api/test", (req, res) => {
   console.log(req.body);
 });
-// db.sequelize.sync({ force: true }).then(() => {
+
+require("./routes/api-routes")(app);
+
 db.sequelize.sync().then(() => {
   app.listen(PORT, () => {
     console.log(`App is running on http://localhost:${PORT}`);
