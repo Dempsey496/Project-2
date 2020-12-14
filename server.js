@@ -45,7 +45,8 @@ app.post("/api/test", (req, res) => {
   console.log(req.body);
 });
 
-require("./routes/api-routes")(app);
+const routes = require("./controllers/cyberSantaController");
+app.use(routes);
 
 db.sequelize.sync().then(() => {
   app.listen(PORT, () => {
