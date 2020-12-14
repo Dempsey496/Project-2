@@ -13,6 +13,8 @@ router.get("/", function(req,res) {
 router.get("/api/lists", function(req, res) {
     db.List.findAll({}).then(function(dbList) {
         res.json(dbList);
+    }).catch(function(err) {
+        console.log(err);
     });
 });
 
@@ -23,6 +25,8 @@ router.post("/api/lists", function(req, res) {
         listCreator: req.body.creator
     }).then(function(dbPost) {
         res.json(dbPost);
+    }).catch(function(err) {
+        console.log(err);
     });
 });
 
@@ -33,6 +37,8 @@ router.delete("/api/lists/:id", function(req, res) {
         }
     }).then(function(dbList) {
         res.json(dbList);
+    }).catch(function(err) {
+        console.log(err);
     });
 });
 
@@ -43,12 +49,16 @@ router.put("/api/lists", function(req, res) {
         }
     }).then(function(dbList) {
         res.json(dbList);
+    }).catch(function(err) {
+        console.log(err);
     });
 });
 
 router.get("/api/gifts", function(req,res) {
     db.Gift.findaAll({}).then(function(dbGift) {
         res.json(dbGift);
+    }).catch(function(err) {
+        console.log(err);
     });
 });
 
@@ -56,6 +66,8 @@ router.get("/api/gifts", function(req,res) {
     console.log(req.body);
     db.Gift.create(req.body).then(function(dbGift) {
         res.json(dbGift);
+    }).catch(function(err) {
+        console.log(err);
     });
 });
 
@@ -67,6 +79,8 @@ router.put("/api/gifts", function(req, res) {
             }
         }).then(function(dbGift) {
             res.json(dbGift);
+        }).catch(function(err) {
+            console.log(err);
         });
 });
 
@@ -77,6 +91,8 @@ router.delete("/api/Gifts/:id", function(req, res) {
         }
     }).then(function(dbGift) {
         res.json(dbGift);
+    }).catch(function(err) {
+        console.log(err);
     });
 });
 
