@@ -1,7 +1,30 @@
 module.exports = function(sequelize, DataTypes) {
-    const User = sequelize.define("User", {
-        email: DataTypes.STRING,
-        password: DataTypes.STRING
+    const List = sequelize.define("List", {
+        listName: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                notNull: {
+                    msg: 'Please enter list name'
+                }
+            }
+        },
+        listCreator: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                notNull: {
+                    msg: 'Please enter creator name'
+                }
+            }
+        }
     });
-    return User;
-}
+
+    List.associate = function(models) {
+        List.hasMany(models.Gift, {
+            foreignKey: "ListId",
+        });
+    };
+
+    return List;
+};
