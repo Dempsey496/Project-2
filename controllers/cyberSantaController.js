@@ -3,12 +3,12 @@ const router = express.Router();
 
 var db = require("../models");
 
-    // Make post for "logged in" user
-router.get("/", function(req,res) {
-    db.findAll(function(data) {
-        res.render("index");
-    });
-});
+    // Already on server.js
+// router.get("/", function(req,res) {
+//     db.findAll(function(data) {
+//         res.render("index");
+//     });
+// });
 
 router.get("/api/lists", function(req, res) {
     db.List.findAll({}).then(function(dbList) {
