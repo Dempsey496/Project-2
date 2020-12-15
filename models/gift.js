@@ -1,8 +1,17 @@
 module.exports = function (sequelize, DataTypes) {
   const Gift = sequelize.define("Gift", {
-    giftName: DataTypes.STRING,
-    giftFor: DataTypes.STRING,
-    giftMaxPrice: DataTypes.STRING
+    giftName: {
+        type: DataTypes.STRING,
+        notNull: true,
+    },
+    giftFor: {
+        type: DataTypes.STRING,
+        notNull: true,
+    },
+    giftMaxPrice: {
+        type: DataTypes.INTEGER,
+        notNull: true,
+    },
   });
 
   Gift.associate = function (models) {
