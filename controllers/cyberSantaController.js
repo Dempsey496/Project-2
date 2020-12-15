@@ -34,6 +34,12 @@ router.post("/api/lists", function(req, res) {
     }).catch(function(err) {
         console.log(err);
     });
+  db.List.create({
+    listName: req.body.name,
+    listCreator: req.body.creator,
+  }).then(function (dbPost) {
+    res.json(dbPost);
+  });
 });
 
 router.delete("/api/lists/:id", function(req, res) {
@@ -61,7 +67,7 @@ router.put("/api/lists/:id", function(req, res) {
 });
 
 router.get("/gifts", function(req,res) {
-    db.Gift.findaAll({}).then(function(dbGift) {
+    db.Gift.findAll({}).then(function(dbGift) {
         res.json(dbGift);
     }).catch(function(err) {
         console.log(err);
@@ -70,8 +76,8 @@ router.get("/gifts", function(req,res) {
 
 router.post("/api/gifts", function(req, res) {
     console.log(req.body);
-    if(!req.body.name || req.body.name.trim().length === 0 || !req.body.creator || 
-    req.body.creator.trim().length === 0) {
+    if(!req.body.name || req.body.name.trim().length === 0 || !req.body.for || 
+    req.body.for.trim().length === 0 || !req.body.max || req.body.max.trim().length === 0) {
         return res.status(400).json({
             message: "Please enter a valid information",
         });
@@ -81,6 +87,13 @@ router.post("/api/gifts", function(req, res) {
     }).catch(function(err) {
         console.log(err);
     });
+  db.Gift.create({
+      giftName: req.body.name,
+      giftFor: req.body.for,
+      giftMaxPrice: req.body.max
+  }).then(function (dbGift) {
+    res.json(dbGift);
+  });
 });
 
 router.put("/api/gifts/:id", function(req, res) {
