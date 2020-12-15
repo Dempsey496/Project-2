@@ -6,7 +6,7 @@ module.exports = function (sequelize, DataTypes) {
   });
 
   Gift.associate = function (models) {
-    Gift.belongsTo(models.Gift, {
+    Gift.belongsTo(models.List, {
       // through: "Lists",
       foreignKey: "GiftId",
     });

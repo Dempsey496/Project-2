@@ -1,0 +1,20 @@
+body {
+    background-image:url("https://lh3.googleusercontent.com/proxy/KS6DQXV_GFqSzdP3ZTffu3bEOSBfmruwTJamXTBxUYSkfjWuaq6OX8Y0grDG079RPbx_XswclQ1Gsdq7JpZxWej99_coELwUSIcccq-_BClDG09_HPqnvR3x3jz4Fdm22wk6xRbB");
+    background-size: 750px;
+    background-position: top;
+    background-repeat: no-repeat; 
+}
+
+#view-lists-button {
+    margin-top: 35%;
+    float: right;
+    margin-left: 2%;
+    margin-right: 35%;
+}
+
+#add-lists-button {
+    margin-top: 35%;
+    float: left;
+    margin-left: 35%;
+    margin-right: 2%;
+}
