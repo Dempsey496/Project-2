@@ -1,14 +1,16 @@
-body {
-    background-image:url("https://lh3.googleusercontent.com/proxy/KS6DQXV_GFqSzdP3ZTffu3bEOSBfmruwTJamXTBxUYSkfjWuaq6OX8Y0grDG079RPbx_XswclQ1Gsdq7JpZxWej99_coELwUSIcccq-_BClDG09_HPqnvR3x3jz4Fdm22wk6xRbB");
-    background-size: 750px;
-    background-position: top;
-    background-repeat: no-repeat; 
+.hero {
+    height: 800px;
+    width: 100vw;
+    background-image: url("../santa.jpg");
+    background-size: cover;
+    background-position: center;
+    position: fixed;
 }
 #homepage-buttons {
     margin: 35%;
-    align-items: center;
+    align-items: center; 
+    position: relative;
 }
-
 #view-lists-button {
     margin-top: 2%;
     margin-bottom: 2%;
@@ -16,5 +18,5 @@ body {
 
 #add-lists-button {
     margin-top: 2%;
-    margin-bottom: 2%;
+    margin-bottom: 2%; 
 }
