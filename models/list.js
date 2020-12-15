@@ -2,21 +2,21 @@ module.exports = function(sequelize, DataTypes) {
     const List = sequelize.define("List", {
         listName: {
             type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                notNull: {
-                    msg: 'Please enter list name'
-                }
-            }
+            notNull: true,
+            // validate: {
+            //     notNull: {
+            //         msg: 'Please enter list name'
+            //     }
+            // }
         },
         listCreator: {
             type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                notNull: {
-                    msg: 'Please enter creator name'
-                }
-            }
+            notNull: true,
+            // validate: {
+            //     notNull: {
+            //         msg: 'Please enter creator name'
+            //     }
+            // }
         }
     });
 
@@ -27,5 +27,4 @@ module.exports = function(sequelize, DataTypes) {
     };
 
     return List;
-    
 };
