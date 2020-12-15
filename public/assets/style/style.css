@@ -4,17 +4,17 @@ body {
     background-position: top;
     background-repeat: no-repeat; 
 }
+#homepage-buttons {
+    margin: 35%;
+    align-items: center;
+}
 
 #view-lists-button {
-    margin-top: 35%;
-    float: right;
-    margin-left: 2%;
-    margin-right: 35%;
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
 
 #add-lists-button {
-    margin-top: 35%;
-    float: left;
-    margin-left: 35%;
-    margin-right: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
 }

@@ -3,20 +3,10 @@ module.exports = function(sequelize, DataTypes) {
         listName: {
             type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                notNull: {
-                    msg: 'Please enter list name'
-                }
-            }
         },
         listCreator: {
             type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                notNull: {
-                    msg: 'Please enter creator name'
-                }
-            }
+            allowNull: false
         }
     });
 
