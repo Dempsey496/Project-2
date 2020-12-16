@@ -9,13 +9,14 @@ var db = require("../models");
 //         res.render("index");
 //     });
 // });
-router.get("/create-gift", function(eq, res){
+router.get("/create-list", function(req, res){
     res.render("create-list");
 })
 
 router.get("/lists", function(req, res) {
     db.List.findAll({}).then(function(dbList) {
         res.json(dbList);
+        res.render("single-list");
     }).catch(function(err) {
         console.log(err);
     });
