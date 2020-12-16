@@ -12,11 +12,7 @@ var db = require("../models");
 router.get("/create-gift", function(eq, res){
     res.render("create-list");
 })
-router.get("/lists", function(res, req){
-    db.List.findAll({}).then(function(dbList){
-        alert(dbList);
-    })
-})
+
 router.get("/api/lists", function(req, res) {
     db.List.findAll({}).then(function(dbList) {
         res.json(dbList);
