@@ -14,6 +14,7 @@ $(document).ready(function() {
         data: {name:listName, creator:listCreator}
       }).then(function(response) {
         console.log(response)
+        window.location.href="/lists";
       })
     });
 
