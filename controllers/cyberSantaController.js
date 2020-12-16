@@ -26,7 +26,7 @@ router.post("/api/lists", function(req, res) {
         listCreator: req.body.creator
     }).then(function(dbPost) {
       
-        res.json(dbPost);
+        res.render("single-list", {list:dbPost});
     });
 });
 
