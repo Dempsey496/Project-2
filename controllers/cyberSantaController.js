@@ -9,7 +9,14 @@ var db = require("../models");
 //         res.render("index");
 //     });
 // });
-
+router.get("/create-gift", function(eq, res){
+    res.render("create-list");
+})
+router.get("/lists", function(res, req){
+    db.List.findAll({}).then(function(dbList){
+        alert(dbList);
+    })
+})
 router.get("/api/lists", function(req, res) {
     db.List.findAll({}).then(function(dbList) {
         res.json(dbList);
@@ -22,6 +29,7 @@ router.post("/api/lists", function(req, res) {
         listName: req.body.name,
         listCreator: req.body.creator
     }).then(function(dbPost) {
+      
         res.json(dbPost);
     });
 });
