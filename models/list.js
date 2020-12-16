@@ -22,7 +22,7 @@ module.exports = function(sequelize, DataTypes) {
 
     List.associate = function(models) {
         List.hasMany(models.Gift, {
-            foreignKey: "ListId",
+            foreignKey: "listId",
         });
     };
 

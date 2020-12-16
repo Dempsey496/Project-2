@@ -9,6 +9,9 @@ var db = require("../models");
 //         res.render("index");
 //     });
 // });
+router.get("/create-gift", function(eq, res){
+    res.render("create-list");
+})
 
 router.get("/lists", function(req, res) {
     db.List.findAll({}).then(function(dbList) {
@@ -30,7 +33,8 @@ router.post("/api/lists", function(req, res) {
         listName: req.body.name,
         listCreator: req.body.creator
     }).then(function(dbPost) {
-        res.json(dbPost);
+        res.render("single-list", {list:dbPost});
+        // res.json(dbPost);
     }).catch(function(err) {
         console.log(err);
     });
