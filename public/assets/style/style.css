@@ -1,30 +1,55 @@
-.hero { 
-    height: 800px;
-    width: 100vw;
-    background-image: url("../santa.jpg");
-    background-size: cover;
-    background-position: center;
-    position: fixed;
+.hero {
+  height: 980px;
+  width: 100vw;
+  background-image: url("../santa.jpg");
+  background-size: cover;
+  background-position: center;
+  position: fixed;
 }
 .hero2 {
-    height: 800px;
-    width: 100vw;
-    background-image: url("../presents.jpg");
-    background-size: cover;
-    background-position: center;
-    position: fixed;
+  height: 980px;
+  width: 100vw;
+  background-image: url("../presents.jpg");
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+}
+.hero3 {
+  height: 980px;
+  width: 100vw;
+  background-image: url("../presents.jpg");
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+}
+.hero4 {
+  height: 980px;
+  width: 100vw;
+  background-image: url("../list-giftList.jpg");
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+}
+.select-list {
+  color: white;
 }
 #homepage-buttons {
-    margin: 35%;
-    align-items: center; 
-    position: relative;
+  margin: 35%;
+  align-items: center;
+  position: relative;
 }
 #view-lists-button {
-    margin-top: 2%;
-    margin-bottom: 2%;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 
 #list-creator {
-    margin-top: 2%;
-    margin-bottom: 2%; 
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+#back-button {
+  position: fixed;
+  top: 0;
+  right: 0;
 }
