@@ -49,7 +49,7 @@ router.post("/api/lists", function (req, res) {
     });
 });
 
-router.delete("/api/lists/:id", function (req, res) {
+router.delete("/api/del-lists/:id", function (req, res) {
   db.List.destroy({
     where: {
       id: req.params.id,
@@ -131,7 +131,7 @@ router.put("/api/gifts/:id", function (req, res) {
     });
 });
 
-router.delete("/api/Gifts/:id", function (req, res) {
+router.delete("/api/del-gifts/:id", function (req, res) {
   db.Gift.destroy({
     where: {
       id: req.params.id,

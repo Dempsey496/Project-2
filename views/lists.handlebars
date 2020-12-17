@@ -5,11 +5,12 @@
     <button class="list-buttons">
       <h2>Name: {{this.dataValues.listName}}</h2>
       <h3>Creator: {{this.dataValues.listCreator}}</h3>
-      <a class="delete-list">[X]</a>
+      <button class="delete-list" data-id="{{id}}">DELETE!</button>
     </button>
     {{/each}}
   </ul>
 </div>
 <div class="col sm-6"> <a id="back-button" href="/" class="waves-effect waves-light btn-large red darken-2"><i
-      class="material-icons right">back</i>Back to Homepage
+      class="material-icons right">keyboard_return</i>Back to Homepage
   </a></div>
+

@@ -10,13 +10,12 @@ $(document).ready(function() {
       console.log(response)
     })
   });
-  $("#delete-button").on("click", function(event) {
+  
+  $(".delete-list").on("click", function() {
+    const id = $(this).data("id");
     $.ajax({
-      url:"/api/lists/:id",
+      url:`/api/del-lists/${id}`,
       method: "DELETE",
-      where: {
-        id: req.params.id,
-      },
     }).then(function(response) {
       console.log(response)
     })
