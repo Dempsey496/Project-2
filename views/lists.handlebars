@@ -1,15 +1,21 @@
-<h1>Please Select Your List</h1>
-<div>
-  <ul>
-    {{#each lists}}
-    <button class="list-buttons">
-      <h2>Name: {{this.dataValues.listName}}</h2>
-      <h3>Creator: {{this.dataValues.listCreator}}</h3>
-      <a class="delete-list">[X]</a>
-    </button>
-    {{/each}}
-  </ul>
+<div class="hero3">
+  <div class="container">
+    <div class="row">
+      <h1 class="select-list">Please Select Your List:</h1>
+      <div>
+        <ul>
+          {{#each lists}}
+          <button class="list-buttons">
+            <h2>Name: {{this.dataValues.listName}}</h2>
+            <h3>Creator: {{this.dataValues.listCreator}}</h3>
+            <a class="delete-list">[X]</a>
+          </button>
+          {{/each}}
+        </ul>
+      </div>
+      <div class="col sm-6"> <a id="back-button" href="/" class="waves-effect waves-light btn-large red darken-2"><i
+            class="material-icons right">back</i>Back to Homepage
+        </a></div>
+    </div>
+  </div>
 </div>
-<div class="col sm-6"> <a id="back-button" href="/" class="waves-effect waves-light btn-large red darken-2"><i
-      class="material-icons right">back</i>Back to Homepage
-  </a></div>
