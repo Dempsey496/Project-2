@@ -128,3 +128,7 @@ canvas {
   background-position: center;
   position: absolute;
 }
+
+#timer {
+  background: white;
+}

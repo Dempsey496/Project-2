@@ -153,3 +153,8 @@ window.addEventListener("resize", function () {
 });
 
 init();
+
+// const timespan = countdown(start|callback, end|callback, units, max, digits);
+// countdownTimer = document.getElementById("timer");
+// countdown( new Date(2000, 0, 1) ).toString();
+
