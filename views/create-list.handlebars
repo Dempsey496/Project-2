@@ -1,28 +1,54 @@
+{{!-- Header and homepage link --}}
+<nav>
+  <div class="nav-wrapper red darken-2">
+    <a href="#" class="brand-logo center"><i class="material-icons left">ac_unit</i><i
+        class="material-icons left">card_giftcard</i>Cyber Santa Lists<i class="material-icons right">ac_unit</i><i
+        class="material-icons right">card_giftcard</i></a>
+    <i class="material-icons right">keyboard_return</i>
+  </div>
+</nav>
+<div class="col sm-6"> <a id="back-button" href="/" class="waves-effect waves-light btn-large red darken-2"><i
+      class="material-icons right">keyboard_return</i>Back to Homepage</a>
+</div>
+
+{{!-- List Inputs and button to submit/redirect to listpage --}}
 <div class="hero2">
-  <div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s6">
-
-          <input id="list-name" type="text" class="validate">
-          <label for="list-name">List Name</label>
+  <div class="create-form">
+    <div class="row white-text">
+      <form class="col s6">
+        <div class="row">
+          <div class="input-field col s8 offset-s7 red darken-2">
+            <input class="white-text" id="list-name" type="text" data-length="10">
+            <label class="white-text" for="list-name">List Name</label>
+          </div>
         </div>
-        <div class="input-field col s6">
-          <input id="list-creator" type="text" class="validate">
-          <label for="list-creator">List Creator</label>
+        <div class="row">
+          <div class="input-field col s8 offset-s7 red darken-2">
+            <input class="white-text" id="list-creator" type="text" data-length="10">
+            <label class="white-text" for="list-creator">List Creator</label>
+          </div>
         </div>
-      </div>
-
-
-      <div class="row">
-        <div class="col sm-6"> <a href="/lists"
-            class="waves-effect waves-light btn-large red darken-2 create-list-submit"><i
-              class="material-icons right">add_circle_outline</i>Create
-            New List</a>
+        <div class="row">
+          <div class="col s3 offset-s8"> <a href="/lists"
+              class="waves-effect waves-light btn-large red darken-2 create-list-submit"><i
+                class="material-icons right">playlist_add</i>Create
+              New List</a>
+          </div>
         </div>
-        <div class="col sm-6"> <a id="back-button" href="/" class="waves-effect waves-light btn-large red darken-2"><i
-              class="material-icons right">back</i>Back to Homepage</a>
-        </div>
-    </form>
+      </form>
+    </div>
   </div>
 </div>
+
+{{!-- Footer --}}
+<div class="snowfoot"></div>
+{{!-- <footer class="page-footer light-blue lighten-5">
+  <div class="container">
+    <div class="row">
+      <div class="col 1 s12">
+        <p class="blue-text right">© 2020 Copyright Plutonium Group</p>
+        <p class="blue-text left">Merry Christmas Everyone!</p>
+      </div>
+    </div>
+  </div>
+</footer> --}}

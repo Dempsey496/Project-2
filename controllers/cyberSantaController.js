@@ -3,12 +3,17 @@ const router = express.Router();
 
 var db = require("../models");
 
-// Already in server.js
-// router.get("/", function(req,res) {
-//     db.findAll(function(data) {
-//         res.render("index");
-//     });
-// });
+router.get("/single-list/", function (req, res) {
+  db.List.findOne({ id: req.params.id })
+    .then(function (data) {
+      console.log(data);
+      res.render("single-list", { list: data });
+    })
+    .catch(function (err) {
+      console.log(err);
+    });
+});
+
 router.get("/create-list", function (req, res) {
   res.render("create-list");
 });
@@ -42,14 +47,13 @@ router.post("/api/lists", function (req, res) {
   })
     .then(function (dbPost) {
       res.render("single-list", { list: dbPost });
-      // res.json(dbPost);
     })
     .catch(function (err) {
       console.log(err);
     });
 });
 
-router.delete("/api/lists/:id", function (req, res) {
+router.delete("/api/del-lists/:id", function (req, res) {
   db.List.destroy({
     where: {
       id: req.params.id,
@@ -101,20 +105,17 @@ router.post("/api/gifts", function (req, res) {
       message: "Please enter a valid information",
     });
   }
-  db.Gift.create(req.body)
+  db.Gift.create({
+    giftName: req.body.name,
+    giftFor: req.body.for,
+    giftMaxPrice: req.body.max,
+  })
     .then(function (dbGift) {
       res.json(dbGift);
     })
     .catch(function (err) {
       console.log(err);
     });
-  db.Gift.create({
-    giftName: req.body.name,
-    giftFor: req.body.for,
-    giftMaxPrice: req.body.max,
-  }).then(function (dbGift) {
-    res.json(dbGift);
-  });
 });
 
 router.put("/api/gifts/:id", function (req, res) {
@@ -131,7 +132,7 @@ router.put("/api/gifts/:id", function (req, res) {
     });
 });
 
-router.delete("/api/Gifts/:id", function (req, res) {
+router.delete("/api/del-gifts/:id", function (req, res) {
   db.Gift.destroy({
     where: {
       id: req.params.id,

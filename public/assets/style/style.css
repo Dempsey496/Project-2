@@ -1,49 +1,130 @@
+body {
+  margin: 0;
+  height: 100%;
+}
+canvas {
+    position: absolute;
+    top:0;
+    left:0;
+    background-image: linear-gradient(bottom, rgb(105,173,212) 0%, rgb(23,82,145) 84%);
+    background-image: -o-linear-gradient(bottom, rgb(105,173,212) 0%, rgb(23,82,145) 84%);
+    background-image: -moz-linear-gradient(bottom, rgb(105,173,212) 0%, rgb(23,82,145) 84%);
+    background-image: -webkit-linear-gradient(bottom, rgb(105,173,212) 0%, rgb(23,82,145) 84%);
+    background-image: -ms-linear-gradient(bottom, rgb(105,173,212) 0%, rgb(23,82,145) 84%);
+    
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0, rgb(105,173,212)),
+        color-stop(0.84, rgb(23,82,145))
+    );
+}
+
+#navhome {
+  z-index: 1;
+}
+
+.list-buttons {
+  margin: 10px;
+  width: 200px;
+  height: 250px;
+  padding: 10px;
+}
+
+.select-list {
+  color: snow;
+  text-align: center;
+}
+
+.create-form {
+  vertical-align: text-top;
+  position: relative;
+  top: 40%;
+  font-size: 40px;
+}
+
+#list-name {
+  height: 75px;
+}
+
+#list-creator {
+  height: 75px;
+}
+
+/* Footer image */
+.snowfoot {
+  background-size: contain;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 200px;
+  width: 100%;
+  background-image: url("https://www.pngkey.com/png/full/259-2598287_share-discounts-christmas-header-and-footer.png");
+}
+
+/* Homepage buttons */
+#homepage-buttons {
+  margin: 15%;
+  align-items: center;
+}
+
+#homepage-button1 {
+  margin-left: 10%;
+  margin-right: 10%;
+  position: relative;
+  left: 25%;
+}
+
+#homepage-button2 {
+  margin-left: 10%;
+  margin-right: 10%;
+  position: relative;
+  left: 75%;
+}
+
+/* Return to home button */
+#back-button {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+/* Background images for each page */
 .hero {
-  height: 980px;
-  width: 100vw;
+  height: 100%;
+  min-width: 100%;
   background-image: url("../santa.jpg");
   background-size: cover;
   background-position: center;
   position: fixed;
 }
+
 .hero2 {
-  height: 980px;
-  width: 100vw;
+  overflow-y: hidden;
+  height: 93.2%;
+  min-width: 100%;
   background-image: url("../presents.jpg");
   background-size: cover;
   background-position: center;
-  position: fixed;
+  position: absolute;
 }
+
 .hero3 {
-  height: 980px;
-  width: 100vw;
+  overflow-y: auto;
+  height: 93.2%;
+  min-width: 100%;
   background-image: url("../presents.jpg");
   background-size: cover;
   background-position: center;
-  position: fixed;
+  position: absolute;
 }
+
 .hero4 {
-  height: 980px;
-  width: 100vw;
+  height: 100%;
+  min-width: 100%;
   background-image: url("../list-giftList.jpg");
   background-size: cover;
   background-position: center;
-  position: fixed;
-}
-.select-list {
-  color: white;
-}
-#homepage-buttons {
-  margin: 35%;
-  align-items: center;
-  position: relative;
-}
-#view-lists-button {
-  margin-top: 2%;
-  margin-bottom: 2%;
-}
-
-#list-creator {
-  margin-top: 2%;
-  margin-bottom: 2%;
+  position: absolute;
 }
