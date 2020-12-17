@@ -1,7 +1,15 @@
-.hero {
+.hero { 
     height: 800px;
     width: 100vw;
     background-image: url("../santa.jpg");
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+}
+.hero2 {
+    height: 800px;
+    width: 100vw;
+    background-image: url("../presents.jpg");
     background-size: cover;
     background-position: center;
     position: fixed;

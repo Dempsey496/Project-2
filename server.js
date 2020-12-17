@@ -33,7 +33,9 @@ app.set("view engine", "handlebars");
 app.get("/", (req, res) => {
   res.render("index");
 });
-
+app.get("/create", (req, res) => {
+  res.render("create-list");
+});
 // API Routes
 app.get("/api/config", (req, res) => {
   res.json({
