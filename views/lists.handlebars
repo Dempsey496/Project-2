@@ -1,16 +1,43 @@
-<h1>Please Select Your List</h1>
-<div>
-  <ul>
-    {{#each lists}}
-    <button class="list-buttons">
-      <h2>Name: {{this.dataValues.listName}}</h2>
-      <h3>Creator: {{this.dataValues.listCreator}}</h3>
-      <button class="delete-list" data-id="{{id}}">DELETE!</button>
-    </button>
-    {{/each}}
-  </ul>
-</div>
+{{!-- Header and homepage link --}}
+<nav>
+  <div class="nav-wrapper red darken-2">
+    <a href="#" class="brand-logo center"><i class="large material-icons left">ac_unit</i><i
+        class="large material-icons left">card_giftcard</i>CyberSanta<i class="large material-icons right">ac_unit</i><i
+        class="large material-icons right">card_giftcard</i></a>
+    <i class="material-icons right">keyboard_return</i>
+  </div>
+</nav>
 <div class="col sm-6"> <a id="back-button" href="/" class="waves-effect waves-light btn-large red darken-2"><i
-      class="material-icons right">keyboard_return</i>Back to Homepage
-  </a></div>
+      class="material-icons right">keyboard_return</i>Back to Homepage</a>
+</div>
 
+{{!-- List buttons to change to single-list page --}}
+<div class="hero3">
+  <div class="container">
+    <div class="row">
+      <h1 class="select-list">Check it twice:</h1>
+      {{#each lists}}
+      <div class="col s3">
+        <a href="/" class="waves-effect waves-light btn-large red darken-2 list-buttons">
+          <u>Name:</u> {{this.dataValues.listName}}<br>
+          <u>Creator:</u> {{this.dataValues.listCreator}}<br>
+          <i class="small material-icons">create</i>
+        </a>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</div>
+
+{{!-- Footer --}}
+<div class="snowfoot"></div>
+{{!-- <footer class="page-footer light-blue lighten-5">
+  <div class="container">
+    <div class="row">
+      <div class="col 1 s12">
+        <p class="blue-text right">© 2020 Copyright Plutonium Group</p>
+        <p class="blue-text left">Merry Christmas Everyone!</p>
+      </div>
+    </div>
+  </div>
+</footer> --}}
