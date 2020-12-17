@@ -21,6 +21,9 @@ canvas{
   background-size: contain;
   background-image: url("")
 } */
+#navhome {
+  z-index: 1;
+}
 
 .list-buttons {
   margin: 10px;
