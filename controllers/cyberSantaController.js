@@ -3,6 +3,16 @@ const router = express.Router();
 
 var db = require("../models");
 
+router.get("/single-list/", function (req, res) {
+  db.List.findOne({ id: req.params.id })
+    .then(function (data) {
+      console.log(data);
+      res.render("single-list", { list: data });
+    })
+    .catch(function (err) {
+      console.log(err);
+    });
+});
 
 router.get("/create-list", function (req, res) {
   res.render("create-list");

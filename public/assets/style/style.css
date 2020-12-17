@@ -1,6 +1,11 @@
-body{margin:0;height:100%;}
-canvas{
-    position:absolute;top:0;left:0;
+body {
+  margin: 0;
+  height: 100%;
+}
+canvas {
+    position: absolute;
+    top:0;
+    left:0;
     background-image: linear-gradient(bottom, rgb(105,173,212) 0%, rgb(23,82,145) 84%);
     background-image: -o-linear-gradient(bottom, rgb(105,173,212) 0%, rgb(23,82,145) 84%);
     background-image: -moz-linear-gradient(bottom, rgb(105,173,212) 0%, rgb(23,82,145) 84%);
@@ -15,12 +20,7 @@ canvas{
         color-stop(0.84, rgb(23,82,145))
     );
 }
-/* .test {
-  background-repeat: no-repeat;
-  position: relative;
-  background-size: contain;
-  background-image: url("")
-} */
+
 #navhome {
   z-index: 1;
 }
@@ -45,11 +45,11 @@ canvas{
 }
 
 #list-name {
-  height: 50px;
+  height: 75px;
 }
 
 #list-creator {
-  height: 50px;
+  height: 75px;
 }
 
 /* Footer image */
@@ -58,7 +58,7 @@ canvas{
   position: fixed;
   left: 0;
   bottom: 0;
-  height: 100px;
+  height: 200px;
   width: 100%;
   background-image: url("https://www.pngkey.com/png/full/259-2598287_share-discounts-christmas-header-and-footer.png");
 }
@@ -93,7 +93,7 @@ canvas{
 /* Background images for each page */
 .hero {
   height: 100%;
-  width: 100%;
+  min-width: 100%;
   background-image: url("../santa.jpg");
   background-size: cover;
   background-position: center;
@@ -101,28 +101,30 @@ canvas{
 }
 
 .hero2 {
-  height: 100%;
-  width: 100%;
+  overflow-y: hidden;
+  height: 93.2%;
+  min-width: 100%;
   background-image: url("../presents.jpg");
   background-size: cover;
   background-position: center;
-  position: fixed;
+  position: absolute;
 }
 
 .hero3 {
-  height: 100%;
-  width: 100%;
+  overflow-y: auto;
+  height: 93.2%;
+  min-width: 100%;
   background-image: url("../presents.jpg");
   background-size: cover;
   background-position: center;
-  position: fixed;
+  position: absolute;
 }
 
 .hero4 {
   height: 100%;
-  width: 100%;
+  min-width: 100%;
   background-image: url("../list-giftList.jpg");
   background-size: cover;
   background-position: center;
-  position: fixed;
+  position: absolute;
 }
