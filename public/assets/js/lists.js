@@ -37,6 +37,20 @@ $(document).ready(function () {
       response.render(response);
     });
   });
+
+  $(".create-gift-submit").on("click", function () {
+    const giftName = $("#gift-name").val();
+    const giftFor = $("#gift-for").val();
+    const giftMaxPrice = $("#max-price").val();
+    $.ajax({
+      method: "POST",
+      url: this.href,
+      data: { name: giftName, for: giftFor, price: giftMaxPrice },
+    }).then(function (response) {
+      console.log(response);
+    });
+  })
+  
 });
 
 (function () {
