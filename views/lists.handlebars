@@ -2,8 +2,8 @@
 <nav>
   <div class="nav-wrapper red darken-2">
     <a href="#" class="brand-logo center"><i class="large material-icons left">ac_unit</i><i
-        class="large material-icons left">card_giftcard</i>Cyber Santa Lists<i class="large material-icons right">ac_unit</i><i
-        class="large material-icons right">card_giftcard</i></a>
+        class="large material-icons left">card_giftcard</i>Cyber Santa Lists<i
+        class="large material-icons right">ac_unit</i><i class="large material-icons right">card_giftcard</i></a>
     <i class="material-icons right">keyboard_return</i>
   </div>
 </nav>
@@ -17,12 +17,11 @@
     <div class="row">
       <h1 class="select-list">Check it twice:</h1>
       {{#each lists}}
-      <div class="col s3 test">
-        <a href="/single-list/:id" class="waves-effect waves-light btn-large red darken-2 list-buttons">
-          <u>Name</u>: {{this.dataValues.listName}}<br>
-          <u>Creator</u>: {{this.dataValues.listCreator}}<br>
-          <i class="small material-icons">create</i>
-        </a>
+      <div class="col s3 test waves-effect waves-light btn-large red darken-2 list-buttons">
+        <u>Name</u>: {{this.dataValues.listName}}<br>
+        <u>Creator</u>: {{this.dataValues.listCreator}}<br>
+        <a href="/single-list/{{this.dataValues.id}}"><button>See Gifts</button></a>
+        <button class="delete-list-btn" data-listid={{this.dataValues.id}}>Delete List</button>
       </div>
       {{/each}}
     </div>
@@ -31,13 +30,3 @@
 
 {{!-- Footer --}}
 <div class="snowfoot"></div>
-{{!-- <footer class="page-footer light-blue lighten-5">
-  <div class="container">
-    <div class="row">
-      <div class="col 1 s12">
-        <p class="blue-text right">© 2020 Copyright Plutonium Group</p>
-        <p class="blue-text left">Merry Christmas Everyone!</p>
-      </div>
-    </div>
-  </div>
-</footer> --}}
