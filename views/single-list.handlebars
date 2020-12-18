@@ -40,7 +40,6 @@
                         <th>Max Price for Gift: </th>
                     </tr>
                 </thead>
-
                 <tbody>
                     {{#each gifts}}
                     <tr>
@@ -53,40 +52,7 @@
             </table>
         </div>
     </div>
-    <div class="row">
-        <div class="gift-list">
-            <ul>
-                {{#each gifts}}
-                <li>
-                    <p>Gift: {{this.dataValues.giftName}}</p>
-                </li>
-                <li>
-                    <p>Gift for: {{this.dataValues.giftFor}}</p>
-                </li>
-                <li>
-                    <p>Max Price: {{this.dataValues.giftMaxPrice}}</p>
-                </li>
-                {{/each}}
-            </ul>
-        </div>
-    </div>
-    {{!-- <div class="row">
-        <div class="col sm-6"> <a href="/gifts"
-                class="waves-effect waves-light btn-large red darken-2 create-list-submit">
-                <i class="material-icons right">add_circle_outline</i></a>
-        </div>
-    </div> --}}
 </div>
 
 {{!-- Footer --}}
 <div class="snowfoot"></div>
-{{!-- <footer class="page-footer light-blue lighten-5">
-    <div class="container">
-        <div class="row">
-            <div class="col 1 s12">
-                <p class="blue-text right">© 2020 Copyright Plutonium Group</p>
-                <p class="blue-text left">Merry Christmas Everyone!</p>
-            </div>
-        </div>
-    </div>
-</footer> --}}

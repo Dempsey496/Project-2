@@ -1,23 +1,22 @@
 const express = require("express");
 const router = express.Router();
-
 var db = require("../models");
-
-router.get("/single-list/:id", function (req, res) {
-  db.List.findOne({ where: {id: req.params.id} })
-    .then(function (data) {
-      console.log(data);
-      res.render("single-list", { list: data });
-    })
-    .catch(function (err) {
-      console.log(err);
-    });
+router.get("/single-list/:id", async function (req, res) {
+  try{
+  const list = await db.List.findOne({ where: {id: req.params.id} });
+  const gifts = await db.Gift.findAll({where: {listId: req.params.id}});
+  const result = {}
+  result.list = list;
+  result.gifts = gifts;
+  res.render("single-list", {list: result.list, gifts: result.gifts})
+  }
+  catch (error) {
+    throw error;
+  }
 });
-
 router.get("/create-list", function (req, res) {
   res.render("create-list");
 });
-
 router.get("/lists", function (req, res) {
   db.List.findAll({})
     .then(function (dbList) {
@@ -28,7 +27,6 @@ router.get("/lists", function (req, res) {
       console.log(err);
     });
 });
-
 router.post("/api/lists", function (req, res) {
   console.log(req.body);
   if (
@@ -52,21 +50,6 @@ router.post("/api/lists", function (req, res) {
       console.log(err);
     });
 });
-
-router.delete("/api/del-lists/:id", function (req, res) {
-  db.List.destroy({
-    where: {
-      id: req.params.id,
-    },
-  })
-    .then(function (dbList) {
-      res.json(dbList);
-    })
-    .catch(function (err) {
-      console.log(err);
-    });
-});
-
 router.put("/api/lists/:id", function (req, res) {
   db.List.update(req.body, {
     where: {
@@ -80,70 +63,14 @@ router.put("/api/lists/:id", function (req, res) {
       console.log(err);
     });
 });
-
-router.get("/gifts", function (req, res) {
-  db.Gift.findAll({})
+router.post("/single-list/:id", function (req, res) {
+  db.Gift.create(req.body)
     .then(function (dbGift) {
+      console.log(dbGift)
       res.json(dbGift);
     })
     .catch(function (err) {
       console.log(err);
     });
 });
-
-router.post("/api/gifts", function (req, res) {
-  console.log(req.body);
-  if (
-    !req.body.name ||
-    req.body.name.trim().length === 0 ||
-    !req.body.for ||
-    req.body.for.trim().length === 0 ||
-    !req.body.max ||
-    req.body.max.trim().length === 0
-  ) {
-    return res.status(400).json({
-      message: "Please enter a valid information",
-    });
-  }
-  db.Gift.create({
-    giftName: req.body.name,
-    giftFor: req.body.for,
-    giftMaxPrice: req.body.max,
-  })
-    .then(function (dbGift) {
-      res.json(dbGift);
-    })
-    .catch(function (err) {
-      console.log(err);
-    });
-});
-
-router.put("/api/gifts/:id", function (req, res) {
-  db.Gift.update(req.body, {
-    giftName: req.body.name,
-    giftFor: req.body.for,
-    giftMaxPrice: req.body.max,
-  })
-    .then(function (dbGift) {
-      res.json(dbGift);
-    })
-    .catch(function (err) {
-      console.log(err);
-    });
-});
-
-router.delete("/api/del-gifts/:id", function (req, res) {
-  db.Gift.destroy({
-    where: {
-      id: req.params.id,
-    },
-  })
-    .then(function (dbGift) {
-      res.json(dbGift);
-    })
-    .catch(function (err) {
-      console.log(err);
-    });
-});
-
 module.exports = router;
