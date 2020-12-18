@@ -2,6 +2,7 @@ $(document).ready(function () {
   // charactercounter functions for create-list & create-gift inputs
   $("input#gift-name, input#gift-for, input#max-price").characterCounter();
   $("input#list-name, input#list-creator").characterCounter();
+
   $(".create-list-submit").on("click", function (event) {
     const listCreator = $("#list-creator").val();
     const listName = $("#list-name").val();
@@ -13,16 +14,18 @@ $(document).ready(function () {
       console.log(response);
     });
   });
+
   $(".list-buttons").on("click", function () {
     $.ajax({
       method: "GET",
-      url: this.href
+      url: this.href,
     }).then(function (response) {
       console.log("done");
     });
   });
+
   $(".create-gift-submit").on("click", function () {
-    console.log("im clicked")
+    console.log("im clicked");
     const giftName = $("#gift-name").val();
     const giftFor = $("#gift-for").val();
     const giftMaxPrice = $("#max-price").val();
@@ -33,30 +36,33 @@ $(document).ready(function () {
       data: { giftName, giftFor, giftMaxPrice, listId },
     }).then(function (response) {
       console.log(response);
-      location.reload()
+      location.reload();
     });
   });
+
   $(".delete-gift-btn").on("click", function (event) {
-    const giftId = $(this).data("giftid")
+    const giftId = $(this).data("giftid");
     $.ajax({
       url: `/api/gift/${giftId}`,
       method: "DELETE",
     }).then(function (response) {
       console.log(response);
-      location.reload()
+      location.reload();
     });
-  })
+  });
+
   $(".delete-list-btn").on("click", function (event) {
-    const listId = $(this).data("listid")
+    const listId = $(this).data("listid");
     $.ajax({
       url: `/api/lists/${listId}`,
       method: "DELETE",
     }).then(function (response) {
       console.log(response);
-      location.reload()
+      location.reload();
     });
-  })
+  });
 });
+
 (function () {
   var requestAnimationFrame =
     window.requestAnimationFrame ||

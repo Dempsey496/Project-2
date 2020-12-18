@@ -1,22 +1,25 @@
 const express = require("express");
 const router = express.Router();
+
 var db = require("../models");
+
 router.get("/single-list/:id", async function (req, res) {
-  try{
-  const list = await db.List.findOne({ where: {id: req.params.id} });
-  const gifts = await db.Gift.findAll({where: {listId: req.params.id}});
-  const result = {}
-  result.list = list;
-  result.gifts = gifts;
-  res.render("single-list", {list: result.list, gifts: result.gifts})
-  }
-  catch (error) {
+  try {
+    const list = await db.List.findOne({ where: { id: req.params.id } });
+    const gifts = await db.Gift.findAll({ where: { listId: req.params.id } });
+    const result = {};
+    result.list = list;
+    result.gifts = gifts;
+    res.render("single-list", { list: result.list, gifts: result.gifts });
+  } catch (error) {
     throw error;
   }
 });
+
 router.get("/create-list", function (req, res) {
   res.render("create-list");
 });
+
 router.get("/lists", function (req, res) {
   db.List.findAll({})
     .then(function (dbList) {
@@ -27,6 +30,7 @@ router.get("/lists", function (req, res) {
       console.log(err);
     });
 });
+
 router.post("/api/lists", function (req, res) {
   console.log(req.body);
   if (
@@ -44,12 +48,13 @@ router.post("/api/lists", function (req, res) {
     listCreator: req.body.creator,
   })
     .then(function (dbPost) {
-      console.log(dbPost)
+      console.log(dbPost);
     })
     .catch(function (err) {
       console.log(err);
     });
 });
+
 // router.put("/api/lists/:id", function (req, res) {
 //   db.List.update(req.body, {
 //     where: {
@@ -63,36 +68,39 @@ router.post("/api/lists", function (req, res) {
 //       console.log(err);
 //     });
 // });
+
 router.post("/single-list/:id", function (req, res) {
   db.Gift.create(req.body)
     .then(function (dbGift) {
-      console.log(dbGift)
+      console.log(dbGift);
       res.json(dbGift);
     })
     .catch(function (err) {
       console.log(err);
     });
 });
-router.delete('/api/gift/:id', (req, res) => {
+
+router.delete("/api/gift/:id", (req, res) => {
   db.Gift.destroy({
-      where: {
-          id: req.params.id
-      }
+    where: {
+      id: req.params.id,
+    },
   })
-      .then((data) => res.json(data))
-      .catch((err) => {
-          if (err) throw err;
-      });
+    .then((data) => res.json(data))
+    .catch((err) => {
+      if (err) throw err;
+    });
 });
-router.delete('/api/lists/:id', (req, res) => {
+
+router.delete("/api/lists/:id", (req, res) => {
   db.List.destroy({
-      where: {
-          id: req.params.id
-      }
+    where: {
+      id: req.params.id,
+    },
   })
-      .then((data) => res.json(data))
-      .catch((err) => {
-          if (err) throw err;
-      });
+    .then((data) => res.json(data))
+    .catch((err) => {
+      if (err) throw err;
+    });
 });
 module.exports = router;
