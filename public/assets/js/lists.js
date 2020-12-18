@@ -39,37 +39,46 @@ $(document).ready(function () {
 
 
 // Countdown timer
-// var timespan = countdown(start|callback, end|callback, units, max, digits);
+function updateTimer(end) {
+  const time = end - new Date();
+  return {
+    'days': Math.floor(time / (1000 * 60 * 60 * 24)),
+    'hours': Math.floor(time / (1000 * 60 * 60) % 24),
+    'minutes': Math.floor(time / (1000/60) % 60),
+    'seconds': Math.floor(time / (1000) % 60),
+    'total': time
+  };
+}
+function startTimer(id, end) {
+  const timerInterval = setInterval(() => {
+  const clock = document.getElementById(id)
+  const timer = updateTimer(deadline)
+  }, 1000, interval);
+};
 
-// countdown.DEFAULTS =
-// 	countdown.YEARS |
-// 	countdown.MONTHS |
-// 	countdown.DAYS |
-// 	countdown.HOURS |
-// 	countdown.MINUTES |
-//   countdown.SECONDS;
-  
-//   countdown( new Date(11, 3, 25) ).toString();
+timer.innerHandlebars = timer.innerHandlebars("#days") +
+                        timer.innerHandlebars("#hours") +
+                        timer.innerHandlebars("#minutes") +
+                        timer.innerHandlebars("#seconds")
 
-//   function(start) {
-//     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-//     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-//     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-//     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-//   }
+  const span = timer.getElementByTagName("span");
+  animateClock(spans[3]);
+  if(timer.seconds === 59) animateClock(spans[2]);
+  if(timer.minutes === 59 && timer.seconds === 59)animateClock(spans[1]);
+  if(timer.hours === 23 && timer.minutes === 59 && timer.seconds === 59)animateClock(spans[0]);
+
+window.onload = function() {
+  const end = new Date ("December 25, 2020 00:00:00")
+  startTimer("clock", end)
+};
+
+// Countdown timer ends
+if(timer.total < 1 ) {
+  clearInterval(timerInterval);
+  timer.innerHandlebars
+}
 
 
-(function () {
-  var requestAnimationFrame =
-    window.requestAnimationFrame ||
-    window.mozRequestAnimationFrame ||
-    window.webkitRequestAnimationFrame ||
-    window.msRequestAnimationFrame ||
-    function (callback) {
-      window.setTimeout(callback, 1000 / 60);
-    };
-  window.requestAnimationFrame = requestAnimationFrame;
-})();
 
 var flakes = [],
   canvas = document.getElementById("canvas"),

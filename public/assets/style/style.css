@@ -21,6 +21,10 @@ canvas {
     );
 }
 
+h1 {
+  background: white;
+}
+
 #navhome {
   z-index: 1;
 }
@@ -127,8 +131,4 @@ canvas {
   background-size: cover;
   background-position: center;
   position: absolute;
-}
-
-#timer {
-  background: white;
 }
