@@ -10,25 +10,22 @@
 <div class="col sm-6"> <a id="back-button" href="/" class="waves-effect waves-light btn-large red darken-2"><i
       class="material-icons right">keyboard_return</i>Back to Homepage</a>
 </div>
-
 {{!-- List buttons to change to single-list page --}}
 <div class="hero3">
   <div class="container">
     <div class="row">
       <h1 class="select-list">Check it twice:</h1>
       {{#each lists}}
-      <div class="col s3 test">
-        <a href="/single-list/{{this.dataValues.id}}" class="waves-effect waves-light btn-large red darken-2 list-buttons">
-          <u>Name</u>: {{this.dataValues.listName}}<br>
-          <u>Creator</u>: {{this.dataValues.listCreator}}<br>
-          <i class="small material-icons">create</i>
-        </a>
+      <div class="col s3 test waves-effect waves-light btn-large red darken-2 list-buttons">
+        <u>Name</u>: {{this.dataValues.listName}}<br>
+        <u>Creator</u>: {{this.dataValues.listCreator}}<br>
+        <a href="/single-list/{{this.dataValues.id}}"><button>See Gifts</button></a>
+        <button class="delete-list-btn" data-listid={{this.dataValues.id}}>Delete List</button>
       </div>
       {{/each}}
     </div>
   </div>
 </div>
-
 {{!-- Footer --}}
 <div class="snowfoot"></div>
 {{!-- <footer class="page-footer light-blue lighten-5">

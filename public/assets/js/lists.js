@@ -13,21 +13,12 @@ $(document).ready(function () {
       console.log(response);
     });
   });
-  $(".delete-list").on("click", function () {
-    const id = $(this).data("id");
-    $.ajax({
-      url: `/api/del-lists/${id}`,
-      method: "DELETE",
-    }).then(function (response) {
-      console.log(response);
-    });
-  });
   $(".list-buttons").on("click", function () {
     $.ajax({
       method: "GET",
       url: this.href
     }).then(function (response) {
-      console.log(response);
+      console.log("done");
     });
   });
   $(".create-gift-submit").on("click", function () {
@@ -40,6 +31,26 @@ $(document).ready(function () {
       method: "POST",
       url: this.href,
       data: { giftName, giftFor, giftMaxPrice, listId },
+    }).then(function (response) {
+      console.log(response);
+      location.reload()
+    });
+  });
+  $(".delete-gift-btn").on("click", function (event) {
+    const giftId = $(this).data("giftid")
+    $.ajax({
+      url: `/api/gift/${giftId}`,
+      method: "DELETE",
+    }).then(function (response) {
+      console.log(response);
+      location.reload()
+    });
+  })
+  $(".delete-list-btn").on("click", function (event) {
+    const listId = $(this).data("listid")
+    $.ajax({
+      url: `/api/lists/${listId}`,
+      method: "DELETE",
     }).then(function (response) {
       console.log(response);
       location.reload()

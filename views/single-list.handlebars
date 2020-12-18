@@ -9,8 +9,6 @@
 <div class="col sm-6"> <a id="back-button" href="/" class="waves-effect waves-light btn-large red darken-2"><i
             class="material-icons right">keyboard_return</i>Back to Homepage</a>
 </div>
-
-
 <div class="hero4">
     <div class="row">
         <div class="col s6">
@@ -27,7 +25,7 @@
                     <input type="text" id="max-price" data-length="10">
                     <label for="max-price">Max Price for Gift:</label>
                 </div>
-                <button class="waves-effect waves-light btn create-gift-submit col s2 offset-s4"
+                <button  class="waves-effect waves-light btn create-gift-submit col s2 offset-s4"
                     data-listId={{list.id}}>Add Gift</button>
             </div>
         </div>
@@ -46,13 +44,30 @@
                         <td>{{this.dataValues.giftName}}</td>
                         <td>{{this.dataValues.giftFor}}</td>
                         <td>{{this.dataValues.giftMaxPrice}}</td>
+                        <td ><button class="delete-gift-btn" data-giftid={{this.dataValues.id}}>X</button></td>
                     </tr>
                     {{/each}}
                 </tbody>
             </table>
         </div>
     </div>
+    {{!-- <div class="row">
+        <div class="col sm-6"> <a href="/gifts"
+                class="waves-effect waves-light btn-large red darken-2 create-list-submit">
+                <i class="material-icons right">add_circle_outline</i></a>
+        </div>
+    </div> --}}
 </div>
-
 {{!-- Footer --}}
 <div class="snowfoot"></div>
+{{!-- <footer class="page-footer light-blue lighten-5">
+    <div class="container">
+        <div class="row">
+            <div class="col 1 s12">
+                <p class="blue-text right">© 2020 Copyright Plutonium Group</p>
+                <p class="blue-text left">Merry Christmas Everyone!</p>
+            </div>
+        </div>
+    </div>
+</footer> --}}
+<script src="../assets/js/lists.js"></script>

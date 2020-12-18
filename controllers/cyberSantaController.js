@@ -44,25 +44,25 @@ router.post("/api/lists", function (req, res) {
     listCreator: req.body.creator,
   })
     .then(function (dbPost) {
-      res.render("single-list", { list: dbPost });
+      console.log(dbPost)
     })
     .catch(function (err) {
       console.log(err);
     });
 });
-router.put("/api/lists/:id", function (req, res) {
-  db.List.update(req.body, {
-    where: {
-      id: req.body.id,
-    },
-  })
-    .then(function (dbList) {
-      res.json(dbList);
-    })
-    .catch(function (err) {
-      console.log(err);
-    });
-});
+// router.put("/api/lists/:id", function (req, res) {
+//   db.List.update(req.body, {
+//     where: {
+//       id: req.body.id,
+//     },
+//   })
+//     .then(function (dbList) {
+//       res.json(dbList);
+//     })
+//     .catch(function (err) {
+//       console.log(err);
+//     });
+// });
 router.post("/single-list/:id", function (req, res) {
   db.Gift.create(req.body)
     .then(function (dbGift) {
@@ -72,5 +72,27 @@ router.post("/single-list/:id", function (req, res) {
     .catch(function (err) {
       console.log(err);
     });
+});
+router.delete('/api/gift/:id', (req, res) => {
+  db.Gift.destroy({
+      where: {
+          id: req.params.id
+      }
+  })
+      .then((data) => res.json(data))
+      .catch((err) => {
+          if (err) throw err;
+      });
+});
+router.delete('/api/lists/:id', (req, res) => {
+  db.List.destroy({
+      where: {
+          id: req.params.id
+      }
+  })
+      .then((data) => res.json(data))
+      .catch((err) => {
+          if (err) throw err;
+      });
 });
 module.exports = router;
