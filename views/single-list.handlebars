@@ -1,13 +1,13 @@
 <nav>
-    <div class="nav-wrapper red darken-2">
-        <a href="#" class="brand-logo center"><i class="material-icons left">ac_unit</i><i
-                class="material-icons left">card_giftcard</i>Cyber Santa Lists<i
-                class="material-icons right">ac_unit</i><i class="material-icons right">card_giftcard</i></a>
-        <i class="material-icons right">keyboard_return</i>
-    </div>
+  <div class="nav-wrapper red darken-2">
+    <a href="#" class="brand-logo center"><i class="material-icons left">ac_unit</i><i
+        class="material-icons left">card_giftcard</i>Cyber Santa Lists<i class="material-icons right">ac_unit</i><i
+        class="material-icons right">card_giftcard</i></a>
+    <i class="material-icons right">keyboard_return</i>
+  </div>
 </nav>
 <div class="col sm-6"> <a id="back-button" href="/" class="waves-effect waves-light btn-large red darken-2"><i
-            class="material-icons right">keyboard_return</i>Back to Homepage</a>
+      class="material-icons right">keyboard_return</i>Back to Homepage</a>
 </div>
 
 
@@ -27,30 +27,8 @@
                     <input type="text" id="max-price" data-length="10">
                     <label for="max-price">Max Price for Gift:</label>
                 </div>
-                <button class="waves-effect waves-light btn create-gift-submit col s2 offset-s4"
-                    data-listId={{list.id}}>Add Gift</button>
+                <button class="waves-effect waves-light btn create-gift-submit col s2 offset-s4" data-listId={{list.id}}>Add Gift</button>
             </div>
-        </div>
-        <div class="col s6">
-            <table class="striped">
-                <thead>
-                    <tr>
-                        <th>Name of Gift: </th>
-                        <th>Who it is for: </th>
-                        <th>Max Price for Gift: </th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    {{#each gifts}}
-                    <tr>
-                        <td>{{this.dataValues.giftName}}</td>
-                        <td>{{this.dataValues.giftFor}}</td>
-                        <td>{{this.dataValues.giftMaxPrice}}</td>
-                    </tr>
-                    {{/each}}
-                </tbody>
-            </table>
         </div>
     </div>
     <div class="row">
