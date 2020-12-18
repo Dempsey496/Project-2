@@ -94,7 +94,7 @@ canvas {
 .hero {
   height: 100%;
   min-width: 100%;
-  background-image: url("../santa.jpg");
+  background-image: url("../images/santa.jpg");
   background-size: cover;
   background-position: center;
   position: fixed;
@@ -104,7 +104,7 @@ canvas {
   overflow-y: hidden;
   height: 93.2%;
   min-width: 100%;
-  background-image: url("../presents.jpg");
+  background-image: url("../images/presents.jpg");
   background-size: cover;
   background-position: center;
   position: absolute;
@@ -114,7 +114,7 @@ canvas {
   overflow-y: auto;
   height: 93.2%;
   min-width: 100%;
-  background-image: url("../presents.jpg");
+  background-image: url("../images/presents.jpg");
   background-size: cover;
   background-position: center;
   position: absolute;
@@ -123,7 +123,7 @@ canvas {
 .hero4 {
   height: 100%;
   min-width: 100%;
-  background-image: url("../list-giftList.jpg");
+  background-image: url("../images/list-giftList.jpg");
   background-size: cover;
   background-position: center;
   position: absolute;
