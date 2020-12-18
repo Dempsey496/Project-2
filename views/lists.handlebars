@@ -18,7 +18,7 @@
       <h1 class="select-list">Check it twice:</h1>
       {{#each lists}}
       <div class="col s3 test">
-        <a href="/single-list/:id" class="waves-effect waves-light btn-large red darken-2 list-buttons">
+        <a href="/single-list/{{this.dataValues.id}}" class="waves-effect waves-light btn-large red darken-2 list-buttons">
           <u>Name</u>: {{this.dataValues.listName}}<br>
           <u>Creator</u>: {{this.dataValues.listCreator}}<br>
           <i class="small material-icons">create</i>
