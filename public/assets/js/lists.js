@@ -27,9 +27,11 @@ $(document).ready(function () {
 
   $(".list-buttons").on("click", function () {
     const id = $(this).data("id");
+
+    console.log(id);
     $.ajax({
       method: "GET",
-      url: `/single-list/${id}`
+      url: this.href
     }).then(function (response) {
       console.log(response);
       response.render(response);
