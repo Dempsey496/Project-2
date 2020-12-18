@@ -154,6 +154,28 @@ window.addEventListener("resize", function () {
 
 init();
 
+
+// Countdown timer
+var timespan = countdown(start|callback, end|callback, units, max, digits);
+
+countdown.DEFAULTS =
+	countdown.YEARS |
+	countdown.MONTHS |
+	countdown.DAYS |
+	countdown.HOURS |
+	countdown.MINUTES |
+  countdown.SECONDS;
+  
+  countdown( new Date(11, 3, 25) ).toString();
+
+  function(start) {
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  }
+
+
 // const timespan = countdown(start|callback, end|callback, units, max, digits);
 // countdownTimer = document.getElementById("timer");
 // countdown( new Date(2000, 0, 1) ).toString();
