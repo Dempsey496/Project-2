@@ -29,13 +29,9 @@
             "error",
             2
         ],
-        "linebreak-style": [
-            "error",
-            "unix"
-        ],
         "quotes": [
             "error",
-            "double"
+            "single"
         ],
         "semi": [
             "error",
@@ -43,13 +39,13 @@
         ]
     },
     "parserOptions": {
-      "ecmaVersion": 6,
-      "sourceType": "module",
-      "ecmaFeatures": {
-          "jsx": true
-      }
-  },
-  "rules": {
-      "semi": "error"
-  }
-  }
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    }
+//     "rules": {
+//         "semi": "error"
+//   }
+}
