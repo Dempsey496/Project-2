@@ -1,4 +1,4 @@
-const express = require("express");
+const express = require('express');
 const exphbs = require("express-handlebars");
 const handlebars = require("handlebars");
 const {
@@ -37,7 +37,7 @@ app.get("/create", (req, res) => {
   res.render("create-list");
 });
 // API Routes
-app.get("/api/config", (req, res) => {
+app.get('/api/config', (req, res) => {
   res.json({
     success: true,
   });
