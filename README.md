@@ -1,7 +1,7 @@
 # Project-2
 
 ## Description
-* This application helps keep christmas shopping lists organized. Easy to create, view, edit, or delete lists. 
+This application is a three page responsive codebase created to provide an accessible and centralized location for users to create, update, delete and view their own Christmas lists or lists of other users. This list can be used not only for users to store their own personal Christmas list, but to have easy access to donations lists from other organizations that posts it within Cyber Santa without having to pull up a Google search and browse each individual site ruffling through information. Cyber Santa utilizes an MVC structure and thhe CRUD method to retrieve, store and delete users data.
 
 ***
 
@@ -13,6 +13,7 @@
 4. [New Technology Used](#newtech)
 5. [File Structure](#filestruc)
 6. [All Technology Used](#tech)
+7. [Contributors]
 7. [License](#lice)
 
 ***
@@ -54,10 +55,7 @@ Must protect API keys in Node with enviroment variables
 <a name="scrshot"></a>
 
 ## Screenshots
-<!-- ![Note Taker Homepage](./assets/noteTakerApp.png)
-![Note Taker Notepad](./assets/noteTakerApp2.png)
-***
-[Site through localhost](https://drive.google.com/file/d/1Spr2Da2Hp9svHxlmuhcO8B2TUZmPvnuG/view) -->
+
 ***
 
 <a name="newtech"></a>
