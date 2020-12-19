@@ -71,11 +71,11 @@ router.post("/api/lists", function (req, res) {
 
 router.post("/single-list/:id", function (req, res) {
   db.Gift.create(req.body)
-    .then(function (dbGift) {
+    .then((dbGift) => {
       console.log(dbGift);
       res.json(dbGift);
     })
-    .catch(function (err) {
+    .catch((err) => {
       console.log(err);
     });
 });

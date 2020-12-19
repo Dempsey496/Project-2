@@ -10,7 +10,9 @@
         class="waves-effect waves-light btn-large red darken-2"><i class="material-icons right">keyboard_return</i>Back
         to Homepage</a>
 </div>
-<div class="hero4">
+
+<div class="container"></div>
+<div class="">
     <div class="row">
         <div class="col s6">
             <div class="row">
@@ -46,7 +48,8 @@
                         <td>{{this.dataValues.giftName}}</td>
                         <td>{{this.dataValues.giftFor}}</td>
                         <td>{{this.dataValues.giftMaxPrice}}</td>
-                        <td><button class="delete-gift-btn" data-giftid={{this.dataValues.id}}>X</button></td>
+                        <td><button class="delete-gift-btn red darken-2" data-giftid={{this.dataValues.id}}>X</button>
+                        </td>
                     </tr>
                     {{/each}}
                 </tbody>
@@ -54,8 +57,6 @@
         </div>
     </div>
 </div>
-{{!-- Footer --}}
-<div class="snowfoot"></div>
 
 {{!-- I had to hardcore the lists.js script scr here so atleast the elements used my script --}}
 <script src="../assets/js/lists.js"></script>

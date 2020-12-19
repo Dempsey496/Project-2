@@ -1,7 +1,8 @@
 # Project-2
 
 ## Description
-This application is a three page responsive codebase created to provide an accessible and centralized location for users to create, update, delete and view their own Christmas lists or lists of other users. This list can be used not only for users to store their own personal Christmas list, but to have easy access to donations lists from other organizations that posts it within Cyber Santa without having to pull up a Google search and browse each individual site ruffling through information. Cyber Santa utilizes an MVC structure and thhe CRUD method to retrieve, store and delete users data.
+
+This application is a four page responsive codebase created to provide an accessible and centralized location for users to create, update, delete and view their own Christmas lists or lists of other users. This site can be used to store their own customized Christmas list and populate it with their gift ideas. Cyber Santa is a full-stack application that lets it's users get a little festive while planning their shopping.
 
 ***
 
@@ -13,7 +14,6 @@ This application is a three page responsive codebase created to provide an acces
 4. [New Technology Used](#newtech)
 5. [File Structure](#filestruc)
 6. [All Technology Used](#tech)
-7. [Contributors]
 7. [License](#lice)
 
 ***
@@ -49,6 +49,7 @@ Must protect API keys in Node with enviroment variables
 
 ## Deployed site link
 
+Cyber Santa link: https://project-2-cyber-santa.herokuapp.com/
 
 ***
 
@@ -56,11 +57,20 @@ Must protect API keys in Node with enviroment variables
 
 ## Screenshots
 
-***
+![Home Page](/public/assets/images/Screenshot2020-12-19042506.png)
 
+***
+![View Lists Page](/public/assets/images/Screenshot2020-12-19042329.png)
+
+***
+![Create Gifts Page](/public/assets/images/Screenshot2020-12-19042234.png)
+
+***
 <a name="newtech"></a>
 
-## New Technology Used
+## New Technology Used - ESLint
+
+For this project we chose ESLint as our new tech. This tool will not only recognize patterns in our code, but it will also return warning or errors after recognition. In order to prevent group colaborations from having several different doc formats, ESLint can be customized to put up flags it the coder is using a non-prefered or bad-quality coding standard.  
 
 ***
 
@@ -118,6 +128,7 @@ Project 2
 * MySQL
 * Sequelize
 * Materialize Framework
+* ESLint
 * Heroku
     * JAWS_DB Addon
 * Node.Js
